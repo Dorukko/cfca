@@ -79,6 +79,11 @@ p a::before {
 p a:hover::before {
     transform: scaleX(1); /* Expand the line on hover */
 }
+.eventlist .day {
+    
+    text-decoration: underline;
+    flex: 1;
+}
 
 .logo {
     position: absolute;
