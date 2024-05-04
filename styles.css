@@ -27,6 +27,10 @@ nav a {
     display: inline-block;
     padding: 5px 10px;
 }
+nav a:hover {
+    color: #ffcc00; /* Change color on hover */
+}
+
 
 nav a::before {
     content: "";
@@ -102,22 +106,76 @@ p a:hover::before {
     border-bottom: 2px solid #333; /* Add a 2px solid border on the bottom side */
 }
 
-/* For screens smaller than 480px (typical smartphones) */
-@media (max-width: 480px) {
+
+@media (max-width: 750px) and (min-width: 320px) {
     header {
         padding: 10px 0;
     }
     nav {
-        padding: 5px 0;
+        padding: 10px 0;
     }
-
     main {
         padding: 10px;
     }
-    footer {
+
+    .logo {
+        width: 95px; /* Adjust logo size for smaller screens */
+    }
+    h1 {
+        font-size: 18px;
+        text-align: center; /* Center align the text */
+        margin: 0; /* Remove default margin */
         padding: 5px;
+        display: flex; /* Use flexbox */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+    }
+}
+@media (max-width: 540px) {
+    header {
+        padding: 10px 0;
+    }
+    nav {
+        padding: 10px 0;
+    }
+    main {
+        padding: 10px;
+    }
+
+    .logo {
+        width: 47px; /* Adjust logo size for smaller screens */
+    }
+    h1 {
+        font-size: 18px;
+        text-align: center; /* Center align the text */
+        margin: 0; /* Remove default margin */
+        padding: 5px;
+        display: flex; /* Use flexbox */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+    }
+}
+
+@media (max-width: 340px) {
+    header {
+        padding: 10px 0;
+    }
+    nav {
+        padding: 10px 0;
+    }
+    main {
+        padding: 10px;
     }
     .logo {
-        width: 30px; /* Adjust logo size for smaller screens */
+        display: none; /* Adjust logo size for smaller screens */
+    }
+    h1 {
+        font-size: 18px;
+        text-align: center; /* Center align the text */
+        margin: 0; /* Remove default margin */
+        padding: 5px;
+        display: flex; /* Use flexbox */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
     }
 }
