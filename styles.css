@@ -107,6 +107,55 @@ p a:hover::before {
 }
 
 
+
+
+h1{
+    background: linear-gradient(
+    to right,
+
+    #00ff00,
+    #487fff,
+    #8168ff,
+    #b172ff,
+    #e772ff,
+    #ea07fe,
+    #ed0390,
+    #00ff00
+
+  );
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 35s linear infinite;
+}
+
+@keyframes animate-gradient {
+  to {
+    background-position: 200%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 750px) and (min-width: 320px) {
     header {
         padding: 10px 0;
@@ -131,6 +180,10 @@ p a:hover::before {
         justify-content: center; /* Center horizontally */
     }
 }
+
+
+
+
 @media (max-width: 540px) {
     header {
         padding: 10px 0;
