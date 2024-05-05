@@ -9,13 +9,21 @@
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Logo" class="logo">
-        <h1>Classes for Change Atlanta</h1>
+        <img src="logo.png" alt="Logo" class="logo"> <!-- Add the logo -->
+        <h1>
+            <span>Classes for Change</span>
+            <span>Atlanta</span>
+        </h1>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
     </header>
-    <nav>
+    <nav class="menu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="events.html">Events</a>
+        <a href="events.html">Schedule</a>
         <a href="contact.html">Contact</a>
     </nav>
     <main>
@@ -25,5 +33,13 @@
     <footer>
         Classes for Change Atlanta
     </footer>
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            var menuToggle = document.querySelector('.menu-toggle');
+            menu.classList.toggle('open');
+            menuToggle.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
