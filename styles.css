@@ -179,57 +179,55 @@ h1{
     }
     .menu {
         position: fixed;
-        top: 40px; /* Adjusted top position */
-        right: 20px; /* Moved to the right */
-        width: 250px;
-        max-height: 0; /* Initially hidden height */
-        background-color: transparent; /* Set initial background color to transparent */
-        padding: 0; /* Adjusted padding */
+        top: 0;
+        left: -130%; /* Initially hidden */
+        width: 100%;
+        height: 100%;
+        background-color: #1D49A7;
+        padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        transition: max-height 0.3s ease-in-out; /* Added transition for smooth animation */
+        transition: left .4s ease; /* Add transition for smooth sliding */
         z-index: 9998;
-        overflow-y: auto; /* Enable vertical scrolling */
+        text-align: center; /* Center align menu items */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     
     .menu.open {
-        top: 10px;
-        left: 10px;
-        max-height: 500px; /* Expanded height */
-        background-color: #f9f9f9; /* Show background color when opened */
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 30px;
-        border-radius: 17px; /* Add border radius to make edges round */
-        border: 1px solid #333; /* Set border color and width */
-
+        left: 0; /* Slide the menu in from the left */
     }
     
+    
     .menu a {
-        font-size: 15px;
-        font-weight: bold;
-        background: linear-gradient(
-            to right,
-            #0400ff,
-            #ff0202
-        );
-        background-size: 200%;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: animate-gradient 35s linear infinite;
-        color: transparent; /* Hide the original text color */
-        text-decoration: none; /* Remove the default underline */
-        position: relative; /* Position relative for absolute positioning of pseudo-element */
+        display: block; /* Change to block for stacking */
+        padding: 20px 40px; /* Increase padding for better spacing */
+        color: #fff; /* White text color */
+        text-decoration: none;
+        transition: color 0.3s, transform 0.3s; /* Add transition for color and transform */
+        border-radius: 5px;
+        border: 1px solid transparent;
+        margin: 10px; /* Add margin for spacing between items */
+        font-size: 24px; /* Increase font size */
+        background-color: #007bff; /* Blue background color */
+    }
+    
+    .menu a:hover {
+        color: #fff; /* White text color on hover */
+        background-color: #0056b3; /* Darker blue background color on hover */
+        border-color: #0056b3; /* Darker blue border color on hover */
+        transform: scale(1.1); /* Add scale animation on hover */
     }
     
     .menu a::after {
-        content: ''; /* Add an empty content for pseudo-element */
-        position: absolute; /* Position the pseudo-element absolutely */
-        left: 0; /* Align with the left edge of the link */
-        bottom: -2px; /* Adjust the distance of the underline from the text */
-        width: 100%; /* Extend the underline to cover the width of the link */
-        height: 2px; /* Set the height of the underline */
-        background-color: #000000; /* Set the color of the underline */
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: #000000;
     }
     
     @keyframes animate-gradient {
@@ -239,16 +237,14 @@ h1{
     }
     
     
-    
-    .menu a:hover {
-        background-color: #ddd;
-    }
+
     
 
 
     /* Stack navigation items vertically */
     h1 span:first-child {
         font-size: 16px;
+        
     }
     
 
