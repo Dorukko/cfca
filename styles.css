@@ -161,21 +161,21 @@ h1{
     
     .menu-toggle .bar {
         display: block;
-        width: 30px;
-        height: 3px;
+        width: 40px;
+        height: 5px;
         background-color: #00ff00; /* Changed color to green */
         margin: 5px 0;
         transition: 0.4s;
     }
     
     .menu-toggle.open .bar:nth-child(1) {
-        transform: translateY(13px) rotate(45deg);
+        transform: translateY(15px) rotate(45deg); /* translate should be 1/2 of the toggle bar menu width*/
     }
     .menu-toggle.open .bar:nth-child(2) {
         opacity: 0;
     }
     .menu-toggle.open .bar:nth-child(3) {
-        transform: translateY(-13px) rotate(-45deg);
+        transform:  translateY(-15px) rotate(-45deg);
     }
     .menu {
         position: fixed;
