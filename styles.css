@@ -113,21 +113,17 @@ h1{
     background: linear-gradient(
     to right,
 
-    #00ff00,
-    #487fff,
-    #8168ff,
-    #b172ff,
-    #e772ff,
-    #ea07fe,
-    #ed0390,
-    #00ff00
+    #1D49A7,
+    #5787DB,
+    #1D49A7
+    
 
   );
   background-size: 200%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: animate-gradient 35s linear infinite;
+  animation: animate-gradient 7s linear infinite;
 }
 
 @keyframes animate-gradient {
@@ -150,85 +146,144 @@ h1{
 
 
 
-
-
-
-
-
-
-@media (max-width: 750px) and (min-width: 320px) {
-    header {
-        padding: 10px 0;
+@media (max-width: 740px) {
+    /* Hamburger menu styles */
+    .menu-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px; /* Moved to the right */
+        cursor: pointer;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
     }
-    nav {
-        padding: 10px 0;
+    
+    .menu-toggle .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #00ff00; /* Changed color to green */
+        margin: 5px 0;
+        transition: 0.4s;
     }
-    main {
-        padding: 10px;
+    
+    .menu-toggle.open .bar:nth-child(1) {
+        transform: translateY(12px) rotate(45deg);
     }
+    .menu-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.open .bar:nth-child(3) {
+        transform: translateY(-13px) rotate(-45deg);
+    }
+    .menu {
+        position: fixed;
+        top: 40px; /* Adjusted top position */
+        right: 20px; /* Moved to the right */
+        width: 250px;
+        max-height: 0; /* Initially hidden height */
+        background-color: transparent; /* Set initial background color to transparent */
+        padding: 0; /* Adjusted padding */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: max-height 0.3s ease-in-out; /* Added transition for smooth animation */
+        z-index: 9998;
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+    
+    .menu.open {
+        top: 10px;
+        left: 10px;
+        max-height: 500px; /* Expanded height */
+        background-color: #f9f9f9; /* Show background color when opened */
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 30px;
+        border-radius: 17px; /* Add border radius to make edges round */
+        border: 1px solid #333; /* Set border color and width */
 
-    .logo {
-        width: 95px; /* Adjust logo size for smaller screens */
     }
+    
+    .menu a {
+        font-size: 15px;
+        font-weight: bold;
+        background: linear-gradient(
+            to right,
+            #0400ff,
+            #ff0202
+        );
+        background-size: 200%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: animate-gradient 35s linear infinite;
+        color: transparent; /* Hide the original text color */
+        text-decoration: none; /* Remove the default underline */
+        position: relative; /* Position relative for absolute positioning of pseudo-element */
+    }
+    
+    .menu a::after {
+        content: ''; /* Add an empty content for pseudo-element */
+        position: absolute; /* Position the pseudo-element absolutely */
+        left: 0; /* Align with the left edge of the link */
+        bottom: -2px; /* Adjust the distance of the underline from the text */
+        width: 100%; /* Extend the underline to cover the width of the link */
+        height: 2px; /* Set the height of the underline */
+        background-color: #000000; /* Set the color of the underline */
+    }
+    
+    @keyframes animate-gradient {
+        to {
+            background-position: 200%;
+        }
+    }
+    
+    
+    
+    .menu a:hover {
+        background-color: #ddd;
+    }
+    
+
+
+    /* Stack navigation items vertically */
+    h1 span:first-child {
+        font-size: 16px;
+    }
+    
+
+    
+
+    /* Other styles */
     h1 {
-        font-size: 18px;
-        text-align: center; /* Center align the text */
+        
+        font-size: 30px;
+        margin: 0;
+        padding: 0;
+        padding-top: 74px;
+        display: flex;
+        flex-direction: column; /* Display the content in a column layout */
+        align-items: flex-end; /* Align items to the right */
+        
+    }
+
+   
+    nav {
         margin: 0; /* Remove default margin */
-        padding: 5px;
         display: flex; /* Use flexbox */
         align-items: center; /* Center vertically */
-        justify-content: center; /* Center horizontally */
+        justify-content: flex-end; /* Align items to the right */
+        padding: 0; /* Remove padding */
+        padding-top: 15px; /* Adjust top padding as needed */
+        padding-bottom: 15px; /* Adjust bottom padding as needed */
     }
-}
-
-
-
-
-@media (max-width: 540px) {
-    header {
-        padding: 10px 0;
+    
+    nav a {
+        font-size: 12px;
+        padding: 0; /* Remove padding from each navigation item */
     }
-    nav {
-        padding: 10px 0;
-    }
+    
     main {
         padding: 10px;
-    }
-
-    .logo {
-        width: 47px; /* Adjust logo size for smaller screens */
-    }
-    h1 {
-        font-size: 18px;
-        text-align: center; /* Center align the text */
-        margin: 0; /* Remove default margin */
-        padding: 5px;
-        display: flex; /* Use flexbox */
-        align-items: center; /* Center vertically */
-        justify-content: center; /* Center horizontally */
-    }
-}
-
-@media (max-width: 340px) {
-    header {
-        padding: 10px 0;
-    }
-    nav {
-        padding: 10px 0;
-    }
-    main {
-        padding: 10px;
-    }
-    .logo {
-        display: none; /* Adjust logo size for smaller screens */
-    }
-    h1 {
-        font-size: 18px;
-        text-align: center; /* Center align the text */
-        margin: 0; /* Remove default margin */
-        padding: 5px;
-        display: flex; /* Use flexbox */
-        align-items: center; /* Center vertically */
-        justify-content: center; /* Center horizontally */
     }
 }
