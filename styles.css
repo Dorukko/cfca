@@ -169,7 +169,7 @@ h1{
     }
     
     .menu-toggle.open .bar:nth-child(1) {
-        transform: translateY(12px) rotate(45deg);
+        transform: translateY(13px) rotate(45deg);
     }
     .menu-toggle.open .bar:nth-child(2) {
         opacity: 0;
