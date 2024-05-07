@@ -118,7 +118,7 @@ p a:hover::before {
     position: absolute;
     top: 0;
     left: 0;
-    width: 163px;
+    width: 166px;
     height: auto;
     border-top: 2px solid #333; /* Add a 2px solid border on the top side */
     border-right: 2px solid #333; /* Add a 2px solid border on the right side */
@@ -324,7 +324,7 @@ nav a{
         font-size: 30px;
         margin: 0;
         padding: 0;
-        padding-top: 72px;
+        padding-top: 74px;
         display: flex;
         flex-direction: column; /* Display the content in a column layout */
         align-items: flex-end; /* Align items to the right */
