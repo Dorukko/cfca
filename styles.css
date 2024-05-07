@@ -2,6 +2,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+
+
+      
 }
 
 header {
@@ -9,7 +12,24 @@ header {
     color: #fff;
     padding: 20px;
     text-align: center;
+    
+    background: linear-gradient(to right, rgb(255, 0, 119), yellow);
+    background-size: 200% auto;
+    animation: gradientAnimation 50s ease infinite;
+    }
+    
+@keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
 }
+
 
 nav {
     background-color: #444;
@@ -22,7 +42,6 @@ nav a {
     color: #fff;
     text-decoration: none;
     margin: 0 10px;
-    transition: color 0.3s ease-in-out; /* Smooth color transition */
     position: relative;
     display: inline-block;
     padding: 5px 10px;
@@ -35,7 +54,7 @@ nav a:hover {
 nav a::before {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -3px;
     left: 0;
     width: 100%;
     height: 2px;
@@ -104,61 +123,52 @@ p a:hover::before {
     border-top: 2px solid #333; /* Add a 2px solid border on the top side */
     border-right: 2px solid #333; /* Add a 2px solid border on the right side */
     border-bottom: 2px solid #333; /* Add a 2px solid border on the bottom side */
+    
 }
-
 
 
 
 h1{
-    background: linear-gradient(
-    to right,
-
-    #1D49A7,
-    #5787DB,
-    #1D49A7
+    background: darkblue;
     
 
-  );
   background-size: 200%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: animate-gradient 7s linear infinite;
 }
-
-@keyframes animate-gradient {
+/* @keyframes animate-gradient {
   to {
     background-position: 200%;
   }
-}
+} */
 
 nav a{
     font-size: 20px;
     padding-bottom: 0px;
     font-weight: bold;
-    color: rgb(255, 0, 0); /* Initial color */
     text-align: center;
-    animation: animate-color 10s linear infinite;
+    /*animation: animate-color 10s linear infinite;*/
 }
 
-@keyframes animate-color {
+/* @keyframes animate-color {
     0% {
-        color: rgb(0, 255, 255) /* Start color */
+        color: rgb(255, 255, 255)  Start color 
     }
     25% {
-        color: rgb(0, 255, 0) /* Color change at 25% of the animation */
+        color: rgb(0, 255, 255)  Color change at 25% of the animation 
     }
     50% {
-        color: rgb(0, 255, 255) /* Color change at 50% of the animation */
+        color: rgb(0, 255, 0)  Color change at 50% of the animation 
     }
     75% {
-        color: rgb(0, 255, 0) /* Color change at 75% of the animation */
+        color: rgb(0, 255, 255)/* Color change at 75% of the animation 
     }
     100% {
-        color: rgb(0, 255, 255); /* End color */
+        color: rgb(255, 255, 255); /* End color 
     }
 }
-
+*/
 
 
 
@@ -178,6 +188,17 @@ nav a{
 
 @media (max-width: 750px) {
     /* Hamburger menu styles */
+    nav a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: transparent; /* Stylish line color */
+        transform: scaleX(0); /* Initially hide the line */
+        transition: transform 0.3s ease-in-out; /* Smooth line transition */
+    }
     .menu-toggle {
         position: fixed;
         top: 20px;
@@ -210,23 +231,40 @@ nav a{
     .menu {
         position: fixed;
         top: 0;
-        left: -130%; /* Initially hidden */
+        top: -130%; /* Initially hidden */
         width: 100%;
         height: 100%;
-        background-color: #1D49A7;
+        
+        background: linear-gradient(to right, rgb(255, 0, 119), yellow);
+        background-size: 200% auto;
+        
         padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        transition: left .4s ease; /* Add transition for smooth sliding */
+        transition: top .4s ease; /* Add transition for smooth sliding */
         z-index: 9998;
         text-align: center; /* Center align menu items */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        animation: gradientAnimation 10s ease infinite ;
     }
     
+@keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+}
+    
+    
     .menu.open {
-        left: 0; /* Slide the menu in from the left */
+        top: 0; /* Slide the menu in from the left */
     }
     
     
@@ -236,7 +274,7 @@ nav a{
         color: #fff; /* White text color */
         text-decoration: none;
         transition: color 0.3s, transform 0.3s; /* Add transition for color and transform */
-        border-radius: 5px;
+        border-radius: 60px;
         border: 1px solid transparent;
         margin: 10px; /* Add margin for spacing between items */
         font-size: 24px; /* Increase font size */
@@ -250,6 +288,7 @@ nav a{
         transform: scale(1.1); /* Add scale animation on hover */
     }
     
+    
     .menu a::after {
         content: '';
         position: absolute;
@@ -257,7 +296,6 @@ nav a{
         bottom: -2px;
         width: 100%;
         height: 2px;
-        background-color: #000000;
     }
     
     @keyframes animate-gradient {
@@ -313,3 +351,7 @@ nav a{
         padding: 10px;
     }
 }
+    
+    
+    
+    
