@@ -45,6 +45,11 @@ nav a {
     position: relative;
     display: inline-block;
     padding: 5px 10px;
+    
+    font-size: 20px;
+    padding-bottom: 0px;
+    font-weight: bold;
+    text-align: center;
 }
 nav a:hover {
     color: #ffcc00; /* Change color on hover */
@@ -142,32 +147,6 @@ h1{
   }
 } */
 
-nav a{
-    font-size: 20px;
-    padding-bottom: 0px;
-    font-weight: bold;
-    text-align: center;
-    /*animation: animate-color 10s linear infinite;*/
-}
-
-/* @keyframes animate-color {
-    0% {
-        color: rgb(255, 255, 255)  Start color 
-    }
-    25% {
-        color: rgb(0, 255, 255)  Color change at 25% of the animation 
-    }
-    50% {
-        color: rgb(0, 255, 0)  Color change at 50% of the animation 
-    }
-    75% {
-        color: rgb(0, 255, 255)/* Color change at 75% of the animation 
-    }
-    100% {
-        color: rgb(255, 255, 255); /* End color 
-    }
-}
-*/
 
 
 
