@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -121,7 +122,7 @@ p a:hover::before {
     position: absolute;
     top: 0;
     left: 0;
-    width: 164px;
+    width: 163px;
     height: auto;
     border-top: 2px solid #333; /* Add a 2px solid border on the top side */
     border-right: 2px solid #333; /* Add a 2px solid border on the right side */
@@ -299,7 +300,7 @@ h1{
         font-size: 30px;
         margin: 0;
         padding: 0;
-        padding-top: 72px;
+        padding-top: 71px;
         display: flex;
         flex-direction: column; /* Display the content in a column layout */
         align-items: flex-end; /* Align items to the right */
