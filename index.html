@@ -21,10 +21,10 @@
         </div>
     </header>
     <nav class="menu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="events.html">Schedule</a>
-        <a href="contact.html">Contact</a>
+        <a href="index">Home</a>
+        <a href="about">About</a>
+        <a href="events">Schedule</a>
+        <a href="contact">Contact</a>
     </nav>
     <main>
         <h2>Welcome to our Classes for Change Atlanta!</h2>
@@ -35,6 +35,15 @@
     </footer>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        var links = document.querySelectorAll("nav.menu a");
+        links.forEach(function(link) {
+            link.setAttribute("href", link.getAttribute("href").replace(".html", ""));
+        });
+    });
+
+
+        
         function toggleMenu() {
             var menu = document.querySelector('.menu');
             var menuToggle = document.querySelector('.menu-toggle');
